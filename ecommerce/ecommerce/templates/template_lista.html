@@ -1,0 +1,17 @@
+{% for elemento in lista %}
+
+    {% if elemento == 'banana' %}
+
+        <h1 style="color:yellow">{{elemento}}</h1>
+
+    {% elif elemento == 'tomate' %}
+
+        <h1 style="color:red">{{elemento}}</h1>
+
+    {% elif elemento == 'naranja' %}
+
+        <h1 style="color:orange">{{elemento}}</h1>
+
+    {% endif %}
+
+{% endfor %}
