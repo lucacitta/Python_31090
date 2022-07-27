@@ -8,11 +8,11 @@ def create_product(request):
     context = {
         'new_product':new_product
     }
-    return render(request, 'new_product.html', context=context)
+    return render(request, 'products/new_product.html', context=context)
 
 def list_products(request):
     products = Products.objects.all()
     context = {
         'products':products
     }
-    return render(request, 'products_list.html', context=context)
+    return render(request, 'products/products_list.html', context=context)
