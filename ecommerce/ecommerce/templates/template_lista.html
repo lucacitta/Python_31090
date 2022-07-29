@@ -1,17 +1,27 @@
-{% for elemento in lista %}
+{% extends 'base.html' %}
 
-    {% if elemento == 'banana' %}
+{% block titulo %}
+    Template con lista
+{% endblock %}
 
-        <h1 style="color:yellow">{{elemento}}</h1>
+{% block contenido_que_cambia %}
 
-    {% elif elemento == 'tomate' %}
+    {% for elemento in lista %}
 
-        <h1 style="color:red">{{elemento}}</h1>
+        {% if elemento == 'banana' %}
 
-    {% elif elemento == 'naranja' %}
+            <h1 style="color:yellow">{{elemento}}</h1>
 
-        <h1 style="color:orange">{{elemento}}</h1>
+        {% elif elemento == 'tomate' %}
 
-    {% endif %}
+            <h1 style="color:red">{{elemento}}</h1>
 
-{% endfor %}
+        {% elif elemento == 'naranja' %}
+
+            <h1 style="color:orange">{{elemento}}</h1>
+
+        {% endif %}
+
+    {% endfor %}
+
+{% endblock %}
