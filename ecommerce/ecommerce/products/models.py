@@ -11,6 +11,10 @@ class Products(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name = 'Product'
+        verbose_name_plural = 'Products'
+
 
 class Category(models.Model):
     name = models.CharField(max_length=50)
