@@ -1,3 +1,22 @@
-<h1>El nombre del producto es {{new_product.name}}</h1>
-<h2>El precio del producto es {{new_product.price}}</h2>
-<h2>El stock del producto es {{new_product.stock}}</h2>
+{% extends 'base.html' %}
+
+{% block titulo %}
+Carga de productos
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+<form action="" method="POST">
+{% csrf_token %}
+
+<table>
+
+    {{form.as_table}}
+
+</table>
+
+
+</form>
+
+
+{% endblock %}
