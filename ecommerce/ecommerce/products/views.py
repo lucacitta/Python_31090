@@ -1,5 +1,5 @@
 from multiprocessing import context
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from products.models import Products
 from products.forms import Formulario_productos
 
@@ -7,14 +7,19 @@ from products.forms import Formulario_productos
 def create_product(request):
 
     if request.method == 'POST':
-        pass
-        # productos = Products.objects.all()
-        # context = {}
-        # if len(productos) >= 3:
-        #     new_product = Products.objects.create(name = 'Coca cola 1l', price = 350, stock = 10)
-        #     context = {
-        #         'new_product':new_product
-        #     }
+        form = Formulario_productos(request.POST)
+
+        if form.is_valid():
+            Products.objects.create(
+                name = form.cleaned_data['name'],
+                price = form.cleaned_data['price'],
+                description = form.cleaned_data['description'],
+                stock = form.cleaned_data['stock']
+            )
+            
+            return redirect(list_products)
+
+
     elif request.method == 'GET':
         form = Formulario_productos()
         context = {'form':form}
