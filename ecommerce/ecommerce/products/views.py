@@ -1,4 +1,5 @@
 from multiprocessing import context
+from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from products.models import Products
 from products.forms import Formulario_productos
@@ -19,7 +20,6 @@ def create_product(request):
             
             return redirect(list_products)
 
-
     elif request.method == 'GET':
         form = Formulario_productos()
         context = {'form':form}
@@ -38,3 +38,9 @@ def primer_formulario(request):
     if request.method == 'POST':
         Products.objects.create(name = request.POST['name'])
     return render(request, 'products/primer_formulario.html', context={})
+
+def search_products(request):
+    search = request.GET['search']
+    products = Products.objects.filter(name=search)
+    context = {'products':products}
+    return HttpResponse(request.GET)
