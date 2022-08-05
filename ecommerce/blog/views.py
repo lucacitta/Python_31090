@@ -7,7 +7,9 @@ class List_articles(ListView):
     model = Articles
     template_name = 'articles/list_articles.html'
 
-# class Detail_article(DetailView):
+class Detail_article(DetailView):
+    model = Articles
+    template_name = 'articles/detail_articles.html'
 
 
 
