@@ -1,5 +1,22 @@
+from django.views.generic import ListView, DetailView
+
 from django.shortcuts import render
 from blog.models import Articles
+
+class List_articles(ListView):
+    model = Articles
+    template_name = 'articles/list_articles.html'
+
+# class Detail_article(DetailView):
+
+
+
+
+
+
+
+
+
 
 
 def create_article(request):
@@ -13,9 +30,3 @@ def create_article(request):
     }
     return render(request, 'articles/new_article.html', context=context)
 
-# def list_products(request):
-#     products = Products.objects.all()
-#     context = {
-#         'products':products
-#     }
-#     return render(request, 'products_list.html', context=context)
