@@ -1,3 +1,4 @@
+from multiprocessing import context
 from django.shortcuts import redirect, render
 from products.models import Products
 from products.forms import Formulario_productos
@@ -38,9 +39,19 @@ def primer_formulario(request):
 
 def search_products(request):
     search = request.GET['search']
-    products = Products.objects.get(name__icontains=search)  #Trae los que cumplan la condicion
+    products = Products.objects.filter(name__icontains=search)  #Trae los que cumplan la condicion
     context = {'products':products}
     return render(request, 'products/search_product.html', context=context)
+
+def delete_product(request, pk):
+    if request.method == 'GET':
+        product = Products.objects.get(pk=pk)
+        context = {'product':product}
+        return render(request, 'products/delete_product.html', context=context)
+    elif request.method == 'POST':
+        product = Products.objects.get(pk=pk)
+        product.delete()
+        return redirect(list_products)
 
 
 #Products.objects.get(id=1) #Trae solo el objeto que cumpla la condicion
