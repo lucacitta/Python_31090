@@ -4,7 +4,7 @@ from products.forms import Formulario_productos
 
 
 def create_product(request):
-
+    
     if request.method == 'POST':
         form = Formulario_productos(request.POST)
 
@@ -24,8 +24,7 @@ def create_product(request):
         return render(request, 'products/new_product.html', context=context)
 
 def list_products(request):
-    products = Products.objects.all()
-    print(len(products))
+    products = Products.objects.all() #Trae todos
     context = {
         'products':products
     }
@@ -39,6 +38,9 @@ def primer_formulario(request):
 
 def search_products(request):
     search = request.GET['search']
-    products = Products.objects.filter(name__icontains=search)
+    products = Products.objects.get(name__icontains=search)  #Trae los que cumplan la condicion
     context = {'products':products}
     return render(request, 'products/search_product.html', context=context)
+
+
+#Products.objects.get(id=1) #Trae solo el objeto que cumpla la condicion
