@@ -1,4 +1,4 @@
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 
 from django.shortcuts import render
 from blog.models import Articles
@@ -10,6 +10,14 @@ class List_articles(ListView):
 class Detail_article(DetailView):
     model = Articles
     template_name = 'articles/detail_articles.html'
+
+class Create_article(CreateView):
+    model = Articles
+    template_name = 'articles/create_article.html'
+    fields = '__all__'
+    success_url = '/articles/list-articles/'
+
+
 
 
 
