@@ -1,5 +1,7 @@
 from django.urls import path
-from products.views import list_products, create_product, primer_formulario, search_products, delete_product
+from products.views import list_products, create_product, primer_formulario, search_products, delete_product, \
+    update_product
+
 
 
 urlpatterns = [
@@ -8,4 +10,5 @@ urlpatterns = [
     path('primer-formulario/', primer_formulario, name='primer_formulario'),
     path('search-products/', search_products, name='search_products'),
     path('delete-product/<int:pk>/', delete_product, name='delete_product'),
+    path('update-product/<int:pk>/', update_product, name='update_product'),
 ]

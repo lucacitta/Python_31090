@@ -13,7 +13,7 @@
             <h5 class="card-title">{{product.name}}</h5>
             <p class="card-text">Precio: {{product.price}}</p>
             <p class="card-text">Stock: {{product.stock}}</p>
-            <a href="#" class="btn btn-primary">Editar</a>
+            <a href="/products/update-product/{{product.id}}" class="btn btn-primary">Editar</a>
             <a href="/products/delete-product/{{product.id}}/" class="btn btn-danger">Borrar</a>
         </div>
     </div>
