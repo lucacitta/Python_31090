@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Index
+{% endblock %}
+
+
+{% block contenido_que_cambia %}
+
+<h1>Este es el index</h1>
+
+{% if message %}
+
+    <h2>{{message}}</h2>
+
+{% endif %}
+
+{% endblock %}
