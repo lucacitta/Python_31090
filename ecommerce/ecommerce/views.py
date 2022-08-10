@@ -20,3 +20,5 @@ def template_con_lista(request):
     }
     return render(request, 'template_lista.html',context=context)
 
+def index(request):
+    return render(request, 'index.html')
