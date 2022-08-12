@@ -46,5 +46,5 @@ def register(request):
         return render(request, 'users/register.html', {'form': form})
 
 def show_profile(request):
-    
-    return HttpResponse()
+    if request.user.is_authenticated:
+        return HttpResponse(request.user.profile.phone)
