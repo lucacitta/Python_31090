@@ -8,7 +8,11 @@
 
     {% for product in products %}
     <div class="card" style="width: 18rem;">
+        {% if product.image %}
+        <img src="{{product.image.url}}" class="card-img-top">
+        {% else %}
         <img src="https://i0.wp.com/edtechreviews.net/wp-content/uploads/2021/12/coderhouse_logo.png?resize=750%2C750&ssl=1" class="card-img-top">
+        {% endif %}
         <div class="card-body">
             <h5 class="card-title">{{product.name}}</h5>
             <p class="card-text">Precio: {{product.price}}</p>
