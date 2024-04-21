@@ -56,20 +56,20 @@
 # moto_1.print_data()
 
 
-class Clase_1():
-    def printear(self):
-        print('Estoy en la clase 1')
-    pass
+# class Clase_1():
+#     def printear(self):
+#         print('Estoy en la clase 1')
+#     pass
 
-class Clase_2():
-    def printear(self):
-        print('Estoy en la clase 2')
-    pass
+# class Clase_2():
+#     def printear(self):
+#         print('Estoy en la clase 2')
+#     pass
 
-class Clase_3(Clase_1, Clase_2):
-    def printear(self):
-        print('Estoy en la clase 3')
-    pass
+# class Clase_3(Clase_1, Clase_2):
+#     def printear(self):
+#         print('Estoy en la clase 3')
+#     pass
 
-print(dir(Clase_3))
+# print(dir(Clase_3))
 

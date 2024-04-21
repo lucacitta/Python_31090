@@ -5,23 +5,21 @@
 {% endblock %}
 
 {% block contenido_que_cambia %}
-
-    {% for product in products %}
-    <div class="card" style="width: 18rem;">
-        {% if product.image %}
-        <img src="{{product.image.url}}" class="card-img-top">
-        {% else %}
-        <img src="https://i0.wp.com/edtechreviews.net/wp-content/uploads/2021/12/coderhouse_logo.png?resize=750%2C750&ssl=1" class="card-img-top">
-        {% endif %}
-        <div class="card-body">
-            <h5 class="card-title">{{product.name}}</h5>
-            <p class="card-text">Precio: {{product.price}}</p>
-            <p class="card-text">Stock: {{product.stock}}</p>
-            <a href="/products/update-product/{{product.id}}" class="btn btn-primary">Editar</a>
-            <a href="/products/delete-product/{{product.id}}/" class="btn btn-danger">Borrar</a>
-        </div>
-    </div>
-    {% endfor %}
+  {% for product in products %}
+  <div class="card" style="width: 18rem;">
+      {% if product.image %}
+      <img src="{{product.image.url}}" class="card-img-top">
+      {% else %}
+      <img src="https://i0.wp.com/edtechreviews.net/wp-content/uploads/2021/12/coderhouse_logo.png?resize=750%2C750&ssl=1" class="card-img-top">
+      {% endif %}
+      <div class="card-body">
+          <h5 class="card-title">{{product.name}}</h5>
+          <p class="card-text">Precio: {{product.price}}</p>
+          <p class="card-text">Stock: {{product.stock}}</p>
+          <a href="/productos/update_product/{{product.id}}" class="btn btn-primary">Editar </a>
+          <a href="/productos/delete_product/{{product.id}}" class="btn btn-danger">Borrar  </a>
+      </div>
+  </div>
+  {% endfor %}
 
 {% endblock %}
-
